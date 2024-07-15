@@ -11,6 +11,7 @@ module.exports = {
         extend: {
             colors: {
                 primary: {
+                    '50':  '#F6F6F6',
                     '100': '#E1E1E1',
                     '200': '#B4B4B4',
                     '300': '#888888',
@@ -22,6 +23,7 @@ module.exports = {
                     '900': '#070707',
                 },
                 secondary: {
+                    '50':  '#FEE6E9',
                     '100': '#FCD0D4',
                     '200': '#F88B94',
                     '300': '#F34553',
@@ -33,7 +35,7 @@ module.exports = {
                     '900': '#160103',
                 },
                 tertiary: {
-                    '50': '#FDFDFD',
+                    '50':  '#FDFDFD',
                     '100': '#FBFBFB',
                     '200': '#F5F5F5',
                     '300': '#EFEFEF',
