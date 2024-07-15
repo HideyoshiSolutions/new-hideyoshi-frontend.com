@@ -1,4 +1,4 @@
-import {Component, HostBinding, inject} from '@angular/core';
+import {Component, HostBinding} from '@angular/core';
 import {RouterOutlet} from '@angular/router';
 import {HlmButtonDirective} from "@spartan-ng/ui-button-helm";
 import {ThemeService} from "../libs/services/theme.service";

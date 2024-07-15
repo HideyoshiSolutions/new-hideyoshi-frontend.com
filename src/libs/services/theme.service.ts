@@ -1,6 +1,6 @@
-import { inject, Injectable, OnDestroy, PLATFORM_ID, RendererFactory2 } from '@angular/core';
-import { DOCUMENT, isPlatformBrowser } from '@angular/common';
-import { ReplaySubject, Subject, takeUntil } from 'rxjs';
+import {inject, Injectable, OnDestroy, PLATFORM_ID, RendererFactory2} from '@angular/core';
+import {DOCUMENT, isPlatformBrowser} from '@angular/common';
+import {ReplaySubject, Subject, takeUntil} from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
@@ -25,6 +25,18 @@ export class ThemeService implements OnDestroy {
         this.toggleClassOnThemeChanges();
     }
 
+    public toggleDarkMode(): void {
+        const newTheme =
+            localStorage.getItem('theme') === 'dark' ? 'light' : 'dark';
+        localStorage.setItem('theme', newTheme);
+        this._theme$.next(newTheme);
+    }
+
+    public ngOnDestroy(): void {
+        this._destroyed$.next();
+        this._destroyed$.complete();
+    }
+
     private syncThemeFromLocalStorage(): void {
         if (isPlatformBrowser(this._platformId)) {
             this._theme$.next(
@@ -43,17 +55,5 @@ export class ThemeService implements OnDestroy {
                 }
             }
         });
-    }
-
-    public toggleDarkMode(): void {
-        const newTheme =
-            localStorage.getItem('theme') === 'dark' ? 'light' : 'dark';
-        localStorage.setItem('theme', newTheme);
-        this._theme$.next(newTheme);
-    }
-
-    public ngOnDestroy(): void {
-        this._destroyed$.next();
-        this._destroyed$.complete();
     }
 }
