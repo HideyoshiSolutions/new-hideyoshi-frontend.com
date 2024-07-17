@@ -9,12 +9,12 @@
 
         <!-- desktop -->
         <div class="hidden sm:flex w-1/2 justify-between items-center">
-            @for (link of navItems; track link.name) {
+            @for (link of navItems; track link.title) {
                 <div class="text-center">
                     <a [routerLink]="link.url" [fragment]="link.section"
                        class="text-2xl">
                         <h1>
-                            {{link.name}}
+                            {{link.title}}
                         </h1>
                     </a>
                 </div>

@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {NgOptimizedImage} from "@angular/common";
 import {RouterLink} from "@angular/router";
 import {ThemeService} from "../../../core/services/theme.service";
+import {Section} from "../../types/section.type";
 
 @Component({
   selector: 'app-yoshi-header',
@@ -14,13 +15,10 @@ import {ThemeService} from "../../../core/services/theme.service";
 })
 export class YoshiHeaderComponent {
 
-    private isDarkMode: boolean = false;
+    private isDarkMode = false;
 
-    navItems: {name: string, url: string, section: string|undefined}[] = [
-        {name: 'Home', url: '', section: 'home'},
-        {name: 'Projects', url: '', section: 'projects'},
-        {name: 'Contact', url: '', section: 'contact'},
-    ];
+    @Input()
+    navItems: Section[] | undefined;
 
     constructor(private themeService: ThemeService) {
         this.themeService.theme$.subscribe(theme => {

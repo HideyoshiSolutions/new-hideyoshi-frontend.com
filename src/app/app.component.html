@@ -1,5 +1,10 @@
-<app-yoshi-header></app-yoshi-header>
+<app-yoshi-header [navItems]="sections"></app-yoshi-header>
 
-<router-outlet></router-outlet>
+<!--<router-outlet></router-outlet>-->
+@for (s of sections; track s.title) {
+    <app-yoshi-section [id]="s.section" [component]="s.component">
+    </app-yoshi-section>
+}
+
 
 <!--<app-yoshi-footer></app-yoshi-footer>-->
