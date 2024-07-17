@@ -1,4 +1,15 @@
-import {Component, Input} from '@angular/core';
+import {
+    AfterViewInit,
+    Component,
+    createComponent,
+    EnvironmentInjector,
+    Injector,
+    Input,
+    TemplateRef,
+    ViewChild, ViewContainerRef
+} from '@angular/core';
+import SectionsBase from "../../../sections/sections.base";
+import {ComponentType} from "@angular/cdk/portal";
 
 @Component({
   selector: 'app-yoshi-section',
@@ -6,7 +17,14 @@ import {Component, Input} from '@angular/core';
   imports: [],
   templateUrl: './yoshi-section.component.html'
 })
-export class YoshiSectionComponent {
-    @Input() component!: unknown;
+export class YoshiSectionComponent implements AfterViewInit{
+    @Input()
+    component!: ComponentType<SectionsBase>;
 
+    @ViewChild('section', { read: ViewContainerRef })
+    section!: ViewContainerRef;
+
+    ngAfterViewInit() {
+        this.section.createComponent(this.component);
+    }
 }
