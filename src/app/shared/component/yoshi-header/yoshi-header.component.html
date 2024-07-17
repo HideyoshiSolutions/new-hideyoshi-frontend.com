@@ -1,5 +1,5 @@
 <div class="sticky top-0 left-0 w-screen flex min-h-20 h-[10vh] z-50
-            bg-background/95 bg-blur border-b border-border">
+            bg-background/95 bg-blur">
     <div class="container mx-auto flex w-full justify-around lg:justify-between">
         <div class="flex justify-center items-center sm:1/4">
             <a routerLink="/">
@@ -11,7 +11,7 @@
         <div class="hidden sm:flex w-1/2 justify-between items-center">
             @for (link of navItems; track link.name) {
                 <div class="text-center">
-                    <a [routerLink]="calculateNavLink(link.url, link.section)"
+                    <a [routerLink]="link.url" [fragment]="link.section"
                        class="text-2xl">
                         <h1>
                             {{link.name}}
@@ -21,7 +21,7 @@
             }
         </div>
         <div class="hidden sm:flex justify-around items-center w-1/4">
-            <button (click)="toogleTheme()">
+            <button (click)="toggleTheme()">
                 <label>theme switcher</label>
             </button>
             <a routerLink="/">

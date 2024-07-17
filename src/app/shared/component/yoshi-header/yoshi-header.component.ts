@@ -17,9 +17,9 @@ export class YoshiHeaderComponent {
     private isDarkMode: boolean = false;
 
     navItems: {name: string, url: string, section: string|undefined}[] = [
-        {name: 'Home', url: '/', section: 'home'},
-        {name: 'Projects', url: '/', section: 'projects'},
-        {name: 'Contact', url: '/', section: 'contact'},
+        {name: 'Home', url: '', section: 'home'},
+        {name: 'Projects', url: '', section: 'projects'},
+        {name: 'Contact', url: '', section: 'contact'},
     ];
 
     constructor(private themeService: ThemeService) {
@@ -28,21 +28,11 @@ export class YoshiHeaderComponent {
         });
     }
 
-
-    toogleTheme() {
+    toggleTheme() {
         this.themeService.toggleDarkMode()
     }
 
     calculateIcon(): string {
         return `assets/icon/${this.isDarkMode ? 'white' : 'red'}/icon-96.png`;
     }
-
-    calculateNavLink(url: string, section: string|undefined): string {
-        if (!section) {
-            return url;
-        }
-        return url + '#' + section;
-    }
-
-
 }
