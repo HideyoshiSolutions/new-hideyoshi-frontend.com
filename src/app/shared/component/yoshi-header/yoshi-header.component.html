@@ -13,14 +13,16 @@
                 <div class="text-center">
                     <a [routerLink]="calculateNavLink(link.url, link.section)"
                        class="text-2xl">
-                        {{link.name}}
+                        <h1>
+                            {{link.name}}
+                        </h1>
                     </a>
                 </div>
             }
         </div>
         <div class="hidden sm:flex justify-around items-center w-1/4">
             <button (click)="toogleTheme()">
-                <p>theme switcher</p>
+                <label>theme switcher</label>
             </button>
             <a routerLink="/">
                 <img [ngSrc]="calculateIcon()" alt="" height="50" width="50" priority>            </a>

@@ -16,9 +16,9 @@ app-root {
 }
 
 :root {
---body: theme('colors.primary.50');
---text-menu: #070707;
---text-body: #070707;
+--body: theme('colors.tertiary.50');
+--text-menu: theme('colors.secondary.500');
+--text-body: theme('colors.secondary.500');
 --background: 0 0% 100%;
 --foreground: 240 10% 3.9%;
 --card: 0 0% 100%;
@@ -37,14 +37,18 @@ app-root {
 --destructive-foreground: 0 0% 98%;
 --border: 240 5.9% 90%;
 --input: var(--text-body);
+--header-1: theme('colors.secondary.600');
+--header-2: theme('colors.secondary.600');
+--header-3: theme('colors.secondary.600');
+--label: theme('colors.secondary.400');
 --ring: 240 5.9% 10%;
 --radius: 0.75rem;
 }
 
 .dark {
 --body: theme('colors.primary.900');
---text-menu: #F6F6F6;
---text-body: #F6F6F6;
+--text-menu: theme('colors.tertiary.500');
+--text-body: theme('colors.tertiary.500');
 --background: 240 10% 3.9%;
 --foreground: 0 0% 98%;
 --card: 240 10% 3.9%;
@@ -63,6 +67,10 @@ app-root {
 --destructive-foreground: 0 0% 98%;
 --border: 240 3.7% 15.9%;
 --input: var(--text-body);
+--header-1: theme('colors.tertiary.50');
+--header-2: theme('colors.tertiary.100');
+--header-3: theme('colors.tertiary.200');
+--label: theme('colors.tertiary.600');
 --ring: 240 4.9% 83.9%;
 }
 
@@ -80,9 +88,6 @@ Avoid text overflows
 */
 a,
 p,
-h1,
-h2,
-h3,
 h4,
 h5,
 h6,
@@ -92,8 +97,22 @@ ng-icon {
     color: var(--text-body);
 }
 
+
+h1 {
+    color: var(--header-1);
+}
+h2 {
+    color: var(--header-2);
+}
+h3 {
+    color: var(--header-3);
+}
 label {
-    color: var(--text-body);
+    color: var(--label);
+}
+
+dark.h1 {
+    color: #F6F6F6;
 }
 
 input,
