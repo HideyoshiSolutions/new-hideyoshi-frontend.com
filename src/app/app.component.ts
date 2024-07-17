@@ -1,26 +1,13 @@
-import {Component, HostBinding} from '@angular/core';
+import {Component} from '@angular/core';
 import {RouterOutlet} from '@angular/router';
-import {ThemeService} from "./core/services/theme.service";
-import {HlmButtonDirective} from '@spartan-ng/ui-button-helm';
+import {YoshiHeaderComponent} from "./shared/component/yoshi-header/yoshi-header.component";
 
 @Component({
     selector: 'app-root',
     standalone: true,
-    imports: [RouterOutlet, HlmButtonDirective],
+    imports: [RouterOutlet, YoshiHeaderComponent],
     templateUrl: './app.component.html',
 })
 export class AppComponent {
     title = 'new-frontend-hideyoshi';
-
-    private isDarkMode = false;
-
-    constructor(private _themeService: ThemeService) {
-        this._themeService.theme$.subscribe((theme) => {
-            this.isDarkMode = theme === 'dark';
-        });
-    }
-
-    public toggleTheme(): void {
-        this._themeService.toggleDarkMode();
-    }
 }

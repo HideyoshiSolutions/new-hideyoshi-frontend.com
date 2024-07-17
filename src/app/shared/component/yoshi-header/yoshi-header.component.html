@@ -1,1 +1,34 @@
-<p>yoshi-header works!</p>
+<div class="sticky top-0 left-0 w-screen flex min-h-20 h-[10vh] z-50
+            bg-background/95 bg-blur border-b border-border">
+    <div class="container mx-auto flex w-full justify-around lg:justify-between">
+        <div class="flex justify-center items-center sm:1/4">
+            <a routerLink="/">
+                <img [ngSrc]="calculateIcon()" alt="" height="50" width="50" priority>
+            </a>
+        </div>
+
+        <!-- desktop -->
+        <div class="hidden sm:flex w-1/2 justify-between items-center">
+            @for (link of navItems; track link.name) {
+                <div class="text-center">
+                    <a [routerLink]="calculateNavLink(link.url, link.section)"
+                       class="text-2xl">
+                        {{link.name}}
+                    </a>
+                </div>
+            }
+        </div>
+        <div class="hidden sm:flex justify-around items-center w-1/4">
+            <button (click)="toogleTheme()">
+                <p>theme switcher</p>
+            </button>
+            <a routerLink="/">
+                <img [ngSrc]="calculateIcon()" alt="" height="50" width="50" priority>            </a>
+        </div>
+
+        <!-- mobile -->
+        <div class="sm:hidden flex justify-center items-center">
+            <p>menu</p>
+        </div>
+    </div>
+</div>
