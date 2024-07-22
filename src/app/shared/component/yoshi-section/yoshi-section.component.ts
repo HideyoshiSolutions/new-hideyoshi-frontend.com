@@ -1,11 +1,7 @@
 import {
     AfterViewInit,
     Component,
-    createComponent,
-    EnvironmentInjector,
-    Injector,
     Input,
-    TemplateRef,
     ViewChild, ViewContainerRef
 } from '@angular/core';
 import SectionsBase from "../../../sections/sections.base";

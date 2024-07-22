@@ -3,13 +3,15 @@ import {NgOptimizedImage} from "@angular/common";
 import {RouterLink} from "@angular/router";
 import {ThemeService} from "../../../core/services/theme.service";
 import {Section} from "../../types/section.type";
+import {YoshiThemeSwitcherComponent} from "../yoshi-theme-switcher/yoshi-theme-switcher.component";
 
 @Component({
   selector: 'app-yoshi-header',
   standalone: true,
     imports: [
         NgOptimizedImage,
-        RouterLink
+        RouterLink,
+        YoshiThemeSwitcherComponent
     ],
   templateUrl: './yoshi-header.component.html'
 })
@@ -24,10 +26,6 @@ export class YoshiHeaderComponent {
         this.themeService.theme$.subscribe(theme => {
             this.isDarkMode = theme === 'dark';
         });
-    }
-
-    toggleTheme() {
-        this.themeService.toggleDarkMode()
     }
 
     calculateIcon(): string {

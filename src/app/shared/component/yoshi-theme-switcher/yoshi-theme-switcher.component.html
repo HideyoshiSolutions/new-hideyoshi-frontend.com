@@ -1,0 +1,9 @@
+<button class="w-full justify-center flex flex-row items-center" (click)="toggleTheme()">
+    <div class="flex flex-row justify-between toggle">
+        <div class="relative pointer-events-auto">
+            <input type="checkbox" name="dark-mode" id="dark-toggle" class="checkbox hidden">
+            <div class="block border-[1px] dark:border-white border-secondary-500 w-10 h-6 rounded-full"></div>
+            <div [@toggleSwitch]="theme" class="dot absolute left-1 top-1 dark:bg-white bg-secondary-500 w-4 h-4 rounded-full transition"></div>
+        </div>
+    </div>
+</button>

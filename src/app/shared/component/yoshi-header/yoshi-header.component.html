@@ -21,9 +21,7 @@
             }
         </div>
         <div class="hidden sm:flex justify-around items-center w-1/4">
-            <button (click)="toggleTheme()">
-                <label>theme switcher</label>
-            </button>
+            <app-yoshi-theme-switcher></app-yoshi-theme-switcher>
             <a routerLink="/">
                 <img [ngSrc]="calculateIcon()" alt="" height="50" width="50" priority>            </a>
         </div>

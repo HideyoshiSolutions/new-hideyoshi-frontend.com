@@ -6,11 +6,12 @@ import {YoshiSectionComponent} from "./shared/component/yoshi-section/yoshi-sect
 import {ContactComponent} from "./sections/contact/contact.component";
 import {ProjectsComponent} from "./sections/projects/projects.component";
 import {HomeComponent} from "./sections/home/home.component";
+import {YoshiFooterComponent} from "./shared/component/yoshi-footer/yoshi-footer.component";
 
 @Component({
     selector: 'app-root',
     standalone: true,
-    imports: [RouterOutlet, YoshiHeaderComponent, YoshiSectionComponent],
+    imports: [RouterOutlet, YoshiHeaderComponent, YoshiSectionComponent, YoshiFooterComponent],
     templateUrl: './app.component.html',
 })
 export class AppComponent {
