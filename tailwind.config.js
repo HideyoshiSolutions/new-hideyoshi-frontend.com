@@ -7,6 +7,7 @@ module.exports = {
         join(__dirname, 'src/**/!(*.stories|*.spec).{ts,html}'),
         join(__dirname, 'libs/ui/**/!(*.stories|*.spec).{ts,html}'),
     ],
+    darkMode: ['class', '[class*="dark"]'],
     theme: {
         extend: {
             colors: {
